@@ -66,3 +66,25 @@ robot -v BROWSER:firefox -d ./logs -i smoke tests
 ```
 
 Note: BROWSER is a variable set in "Resources\Base.robot" . Always match your browser variable description
+
+Verifying fork Upstream:
+```shell
+git remote -v
+```
+Adding fork Upstream:
+```shell
+git remote add upstream git@github.com:telverneck/grupoEstudosRobot.git
+```
+
+Updating fork Upstream:
+```shell
+git fetch upstream
+```
+Check out your fork's local default branch - in this case, we use main.
+```shell
+git checkout main
+```
+Update local with the upstream. This brings your fork's default branch into sync with the upstream repository, without losing your local changes.
+```shell
+git merge upstream/main
+```
