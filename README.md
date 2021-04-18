@@ -23,6 +23,13 @@ pip install robotframework-faker
 ```
 
 - Add webdriver to the path (eg: Chromedriver, geckodriver)
+- Add webdriver to the path in Ubuntu
+```shell
+chmod +x ~/chromedriver
+```
+```shell
+sudo mv chromedriver /usr/local/bin
+```
 
 ## Screenshots, Console log and reports:
 project\logs
@@ -33,7 +40,7 @@ project\logs
 ## Commands:
 full test cycle: 
 ```shell
-robot -d ./logs tests
+robot -d ./logs Tests
 ```
 
 Smoke test: 
@@ -53,6 +60,10 @@ Run:
 pabot --processes 2 --outputdir Results\ Tests\*.robot
 ```
 
+Run in Ubuntu: 
+```shell
+pabot -d ./logs Tests\
+
 Note: add this parameters to ignore errors in the base page:
 Open Browser        about:blank   Chrome         executable_path=C:/path/to/chromedrive     options=add_argument("--ignore-certificate-errors")
 
@@ -66,6 +77,8 @@ robot -v BROWSER:firefox -d ./logs -i smoke tests
 ```
 
 Note: BROWSER is a variable set in "Resources\Base.robot" . Always match your browser variable description
+
+Github: https://github.com/telverneck/grupoEstudosRobot
 
 Verifying fork Upstream:
 ```shell
